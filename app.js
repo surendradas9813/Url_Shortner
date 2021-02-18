@@ -9,9 +9,7 @@ const app = express();
 app.use(bodyParser.urlencoded({extended:true}));
 
 
-mongoose.connect("mongodb://localhost:27017/UrlShortener",{
-    useNewUrlParser:true,useUnifiedTopology:true
-});
+mongoose.connect("mongodb+srv://admin_Surendra:btech4year@cluster0.5am27.mongodb.net/UrlShortener", { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true });
 
 
 app.set("view engine","ejs");
