@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container my-5">
+        <h1>URL Shortener</h1>
+        <form action="/shortUrls" method="POST" class="my-5 form-inline">
+            <label for="fullUrl" class="sr-only">Url</label>
+            <input class="col form-control mr-2" name="fullUrl" type="url" placeholder="URL" required>
+            <button class="btn btn-success">Shrink</button>
+        </form>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Full URL</th>
+                    <th>Short URL</th>
+                    <th>Clicks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% Urls.forEach((url)=>{ %>
+                <tr>
+                    <td><a href="<%= url.full%>"><%= url.full %></a></td>
+                    <td><a href="<%= url.short%>"><%= url.short %></a></td>
+                    <td><a href="<%= url.clicks%>"><%= url.clicks %></a></td>
+                </tr>
+
+                <% }) %>
+
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>
